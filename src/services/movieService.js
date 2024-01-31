@@ -37,7 +37,7 @@ async function deleteById(id) {
   return;
 }
 
-async function review(id) {
+async function evaluate(id) {
   const movie = await Movie.findById(id);
   if (!movie) {
     throw new Error("Movie not found");
@@ -49,4 +49,4 @@ async function review(id) {
   return movie;
 }
 
-export { create, list, findbyId, update, deleteById, review };
+export { create, list, findbyId, update, deleteById, evaluate };

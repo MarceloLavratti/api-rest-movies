@@ -4,6 +4,7 @@ import {
   findbyId,
   update,
   deleteById,
+  evaluate,
 } from "../services/movieService.js";
 
 async function createNewMovie(req, res) {
@@ -79,7 +80,7 @@ async function reviewMovie(req, res) {
   try {
     const { id } = req.params;
     const { review } = req.body;
-    const movie = await update(id);
+    const movie = await evaluate(id);
     res.status(201).json(movie);
   } catch (error) {
     res
